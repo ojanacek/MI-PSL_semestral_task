@@ -1,0 +1,271 @@
+> Lexical Syntax
+>> What characters are operator characters?
+$~Yes~\u0020-\u007F
+>> What is an operator?
+$~Yes~
+>> What the back quoted identifier serves for?
+$~Yes~
+>> Write at least 5 Scala non-alphanumeric keywords.
+$~Yes~
+>> By what symbols can be terminated Scala statements?
+$~Yes~
+>> When is a newline character (\n) treated as a statement delimiter?
+$~Yes~
+>> Name at least one position where a newline (\n) does not terminate an expression or statement.
+$~Yes~
+>> Enumerate at least 5 kinds of Scala literals.
+$~Yes~
+>> What kinds of integer literal are in Scala?
+$~Yes~
+>> What is a multi-line string literal?
+$~Yes~
+>> Write at least 2 escape sequences, which can be used in character and string literals, and their meaning.
+$~Yes~
+>> What is a symbol literal?
+$~Yes~
+>> Which comment types exist and what are their properties?
+$~Yes~
+> Classes, Traits, Objects
+>> Write the equivalent constructs if the primary constructor's formal parameter is preceded by the keyword var.
+$~Yes~setter def x_=(x: Int) { $$x = x }
+>> Write an example of a class with an auxiliary constructor.
+$~Yes~
+>> How traits differ (what lacks) from non-trait classes?
+$~Yes~
+>> What object definitions lack unlike class definitions?
+$~Yes~
+>> When is an object created?
+$~Yes~
+>> What is a companion object?
+$~Yes~
+>> How can be Java's static members substituted? in Scala?
+$~Yes~
+>> How is defined operator == in class Any?
+$~Yes~
+>> Where is defined method eq and what is its semantic?
+$~Yes~
+>> How is defined value null?
+$~Yes~
+>> What is it Nothing?
+$~Yes~
+>> How is defined Some?
+$~Yes~isEmpty = false, get = value
+>> How is defined None?
+$~Yes~item type is Option[Nothing]
+>> What are case class features?
+$~Yes~
+>> What is an extractor object?
+$~Yes~
+>> How is defined method copy in case classes?
+$~Yes~
+>> How is defined method equals in case classes?
+$~Yes~
+> Templates
+>> Which kinds of template definitions exist?
+$~Yes~
+>> Where may template definition occur?
+$~Yes~
+>> What are the main parts of a template?
+$~Yes~tpltype extends earlydefs constr with mt1 with ... with mtn { body }
+>> Which parts of a template can be omitted?
+$~Yes~
+>> How differs trait and class list of parents?
+$~Yes~no ctor params for trait super
+>> What happens when a list of parents within the template is omitted?
+$~Yes~
+>> What is the mixin-evaluation and how it is performed?
+$~Yes~traits - trait body is evaluated; classes - super ctor, all bases in template linearization are mixin-evaulated, class body is evaluated
+>> What contains a template body?
+$~Yes~self type, imports, members, statements
+>> What elements can be class members?
+$~Yes~
+>> What is it declaration and what elements can be declared?
+$~Yes~
+>> What is it definition and what elements can be defined?
+$~Yes~
+>> What is it constant value definition?
+$~Yes~
+>> What is it uniform access?
+$~Yes~
+>> What is equivalent to the following field declaration: var x : T?
+$~Yes~ def x : T; def x_= ( y : T ): Unit
+>> How can be expressed the var definition with the default initial value?
+$~Yes~
+>> When the modifier override is mandatory?
+$~Yes~
+>> Which methods can be referred by keyword super?
+$~Yes~
+>> Where can be used the constructor invocation?
+$~Yes~when initializing a template or in a class/object definition
+>> What are base classes?
+$~Yes~
+>> What diagram is formed by the direct inheritance relationship on base classes?
+$~Yes~
+>> When is the list of parents defined by a template well-formed?
+$~Yes~super defined in constr must be subclass of a class that is parent of all traits mt1 ... mtn
+>> What is the linearization of class Sub given by following definition? class Sup, trait Mt, class Sub extends Sup with Mt
+$~Yes~
+>> What is the self type definition?
+$~Partially~typeId: Type => or this : Type =>
+>> What is the early definition clause?
+$~Yes~
+> Functions
+>> What is a "higher-order function"?
+$~Yes~
+>> Write the type of the function: def cmp(a : Int, b : Int)  = a > b.
+$~Yes~
+>> For what is the function type: (Int, Int) => Boolean shorthand?
+$~Yes~
+>> What does it mean f(e) when f is a value?
+$~Yes~
+>> What is the form of the procedure definition?
+$~Yes~
+>> What is an anonymous function? Write an example.
+$~Yes~
+>> When and by what may be substituted formal parameters in the body of an anonymous function?
+$~Yes~
+>> How can be a function converted to a function value?
+$~Yes~
+>> What is an anonymous function (x : Int) => -x equivalent to?
+$~Yes~
+>> What is a curried function?
+$~Yes~
+>> What is a closure?
+$~Yes~
+>> What is a default argument?
+$~Yes~
+>> What is a named argument?
+$~Yes~
+>> What are call-by-name parameters?
+$~No~
+>> What is a repeated parameter?
+$~Yes~
+> Pattern Matching
+>> What is a literal pattern? Write a simple example.
+$~Yes~
+>> What happens if no matching pattern is found?
+$~Yes~
+>> What is a placeholder pattern and where it is usually used?
+$~Yes~
+>> What is a variable pattern?
+$~Yes~case i : Int => "int value: " + i
+>> What is a constructor pattern?
+$~Yes~
+>> What is an extractor pattern?
+$~Yes~
+>> What is a tuple pattern?
+$~Yes~case (x, y) => (y, x)
+>> Do write an example of a pattern guard.
+$~Yes~case 10 => println("ten"); case x if x > 10 => println("greater than ten"); case _ => println("less than ten")
+>> What is the infix operation pattern?
+$~Yes~case head :: tail => println("tail:" + tail)
+>> What is a difference between variable and StableId pattern?
+$~Yes~StabledId needs existing variables starting with a capital letter or enclosed in apostrophes, a variable pattern matches any value
+> Types
+>> Describe the Scala types taxonomy.
+$~Partially~
+>> Outline (simplified) Scala class hierarchy.
+$~Yes~
+>> What is a path?
+$~Yes~
+>> What is a stable identifier and where is required?
+$~Partially~path ending with identifier, used in imports, pattern matching and constructor/extractor pattern
+>> What requirements must fulfill the parameterized type?
+$~No~
+>> What is the format of the tuple type and for what is it alias?
+$~Yes~
+>> What is the format of the compound type?
+$~Partially~
+>> What is duck typing?
+$~Yes~def letQuack(duckLike : { def quack() }) = duckLike.quack()
+>> What is the form of the type declaration?
+$~Partially~type MyType >: LowerBound <: UpperBound ... default lower is Nothing, default upper is Any
+>> What is the form of the type definition?
+$~Partially~like alias in .NET
+>> What constructs has type parameters?
+$~Yes~
+>> What is the relation of parameterized types T[S] and T[R] if S<:R.
+$~No~
+>> Where a covariant type parameter can be used?
+$~Partially~vals and returns
+>> Where a contravariant type parameter can be used?
+$~Partially~function params
+>> Where an invariant type parameter can be used?
+$~Yes~
+>> What is the singleton type? What values belong to the singleton type?
+$~No~
+>> What is the type projection? What values belong to the type projection?
+$~No~
+>> What is the path-dependent type? Write an example.
+$~No~
+>> Write an example of an enumeration.
+$~Yes~object RgbColor extends Enumeration { val Red, Green, Blue = Value }
+> Lists
+>> What are main features of collection List?
+$~Yes~
+>> write the definition of the class which defines the node of the list.
+$~No~final case class ::[B](head: B, tail: List[B]) extends List[B] {def isEmpty = false}
+>> write the definition of Nil.
+$~Yes~case object Nil extends List[Nothing] ... override isEmpty, head and tail
+>> write the concatenation function of the class List.
+$~Yes~def ::[B >: A] (x: B): List[B] = new scala.collection.immutable.::(x, this)
+>> What are the elementary operations of list by which the other can be defined?
+$~Yes~
+>> Write the definition of method List.length.
+$~Yes~def length: Int ... case Nil => 0; case x :: xs => 1 + xs.length
+>> Write the definition of method List.init.
+$~No~
+>> Write the definition of method List.last.
+$~Partially~def last: A ... case Nil => error("Nil.last"); case x :: Nil => x; case x :: xs => xs.last
+>> Write the definition of method List.take.
+$~Partially~def take(n: Int): List[A] = if (n == 0 || isEmpty) Nil else head :: tail.take(n-1)
+>> Write the definition of method List.drop.
+$~Partially~def drop(n: Int): List[A] = if (n == 0 || isEmpty) this else tail.drop(n-1)
+>> Write the method which enables list subscripting.
+$~No~
+>> Write the method which enables list concatenation.
+$~No~
+>> Write the definition of method List.map.
+$~Partially~def map[B](f: A => B): List[B] ... case Nil => this; case x :: xs => f(x) :: xs.map(f)
+>> Write the definition of method List.foreach.
+$~Yes~def foreach(f: A => Unit) ... case Nil => (); case x :: xs => f(x); xs.foreach(f)
+>> Write the definition of method List.filter.
+$~Yes~def filter(p: A => Boolean): List[A] = ... case Nil => this; case x :: xs => if (p(x)) x :: xs.filter(p) else xs.filter(p)
+>> Describe reduceLeft.
+$~Yes~def reduceLeft [B >: A] (f: (B, A) => B): B
+>> Describe foldLeft.
+$~Partially~
+>> Describe flatMap.
+$~Yes~
+> Collections
+>> What are the variants of collections and in what packages are they defined?
+$~Yes~
+>> Draw the graph of inheritance of abstract collections.
+$~Yes~
+>> What is the collection uniform syntax principle?
+$~Yes~each abstract collection type has defined a concrete default implementation
+>> What is the collection uniform return type principle?
+$~Yes~
+>> What is the basic abstract operation defined within Traversable?
+$~Yes~
+>> Write a representative of Traversable mapping operations.
+$~Yes~
+>> Write a representative of Traversable conversion operations.
+$~Yes~
+>> Write a representative of Traversable size operations.
+$~Yes~
+>> Write a representative of Traversable retrieval operations.
+$~Yes~
+>> Write a representative of Traversable subcollection operations.
+$~Yes~
+>> Write a representative of Traversable subdivision operations.
+$~Yes~
+>> Write a representative of Traversable condition operations.
+$~Yes~
+>> Write a representative of Traversable fold operations.
+$~Yes~
+>> Write a representative of Traversable string operations.
+$~Yes~
+>> What is the basic abstract operation defined within Iterable?
+$~Yes~
+
